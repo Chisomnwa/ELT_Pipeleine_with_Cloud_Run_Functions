@@ -41,7 +41,7 @@ This project demonstrates how to automate an **ELT (Extract, Load, Transform)** 
 - **Terraform**:
   - For provisioning of data infrastructure
 - **Google Cloud Platform (GCP)**:
-  - Google Cloud Run Function
+  - Google Cloud Run Functions
   - BigQuery
   - Cloud Storage
 
