@@ -18,7 +18,7 @@ This project demonstrates how to automate an **ELT (Extract, Load, Transform)** 
 
 ## Architecture
 
-![image](https://github.com/Chisomnwa/ELT-Pipeline-with-GCP-and-Airflow/blob/main/project_files/data_pipeline_architecture.png)
+![image](https://github.com/Chisomnwa/ELT_Pipeleine_with_Cloud_Run_Functions/blob/main/project_files/data_pipeline_architecture.png)
 
 
 ### Workflow
@@ -62,7 +62,7 @@ This project demonstrates how to automate an **ELT (Extract, Load, Transform)** 
 
 ### Looker Studio Report
 
-![image](https://github.com/Chisomnwa/ELT-Pipeline-with-GCP-and-Airflow/blob/main/project_files/google_looker_studio_dashboard.png)
+![image](https://github.com/Chisomnwa/ELT_Pipeleine_with_Cloud_Run_Functions/blob/main/project_files/google_looker_studio_dashboard.png)
 
 ---
  ## Extra Resources
