@@ -66,5 +66,5 @@ This project demonstrates how to automate an **ELT (Extract, Load, Transform)** 
 
 ---
  ## Extra Resources
- - [Medium Article](https://medium.com/towards-data-engineering/elt-data-pipeline-with-gcp-and-apache-airflow-86c6d72544ef).
+ - [Medium Article](https://medium.com/towards-data-engineering/automating-elt-data-pipeline-with-cloud-run-functions-443622a99aa0).
    
