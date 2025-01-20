@@ -4,7 +4,8 @@ from google.cloud.bigquery import Table
 import pandas as pd
 import os
 import io
-import pyarrow
+
+BIGQUERY_PROJECT = os.getenv('BIGQUERY_PROJECT')
 
 def process_csv(event, context):
     """Triggered by a file upload to Cloud Storage.
@@ -35,7 +36,8 @@ def process_csv(event, context):
     df.columns = df.columns.str.lower()
 
     # Define BigQuery staging table ID
-    staging_table_id = f"{os.getenv('BIGQUERY_PROJECT')}.staging_dataset.raw_table"
+    staging_table_id = f"{BIGQUERY_PROJECT}.staging_dataset.raw_table"
+
 
     # Load raw data into the staging dataset
     bigquery_client.load_table_from_dataframe(df, staging_table_id).result()
@@ -44,11 +46,11 @@ def process_csv(event, context):
     countries = df['country'].unique()  # Use lowercase 'country' as the column name
     for country in countries:
         country_df = df[df['country'] == country]
-        transformed_table_id = f"{os.getenv('BIGQUERY_PROJECT')}.transformed_dataset.{country}_table"
+        transformed_table_id = f"{BIGQUERY_PROJECT}.transformed_dataset.{country}_table"
         bigquery_client.load_table_from_dataframe(country_df, transformed_table_id).result()
 
         # Create views for reporting
-        reporting_view_id = f"{os.getenv('BIGQUERY_PROJECT')}.reporting_dataset.{country}_view"
+        reporting_view_id = f"{BIGQUERY_PROJECT}.reporting_dataset.{country}_view"
         view_query = f"SELECT * FROM `{transformed_table_id}`"
         
         view = Table(reporting_view_id)
